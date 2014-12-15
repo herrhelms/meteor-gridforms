@@ -1,6 +1,6 @@
 ### meteor-gridforms
 
-Based on Kumail Hunaids »[gridforms](https://github.com/kumailht/gridforms) front-end library« this package brings his beautiful gridforms to your meteor application project in no time. Currently working with the following html input elements:   **text**, **email**, **number**, **date**, **submit** and **textarea**.
+Based on Kumail Hunaids »[gridforms](https://github.com/kumailht/gridforms) front-end library« this package brings his beautiful gridforms to your meteor application project in no time. Currently working with the following html input elements:   **text**, **email**, **number**, **date**, **checkbox** ,**submit** and **textarea**.
 
 
 ### basic usage
@@ -72,3 +72,30 @@ This package will auto-check any element based on it's type upon onBlur/onFocusO
 
 This is my first public meteor package, so please feel free to [contact me](https://twitter.com/herrhelms) for comments, suggestions and critique, or **contribute to the code and extend this package** and don't forget to give kudos and/or a star to [Kumail](https://github.com/kumailht). Happy grid-forming...
 
+Here's a better example with all functionality included. Validation errors of date, email number elements and are shown in console.log() for now. 
+Yes, I know **radios** and **select** elements are missing at the moment. Maybe you wanna help with that? 
+ 
+```
+				{{#gridForm "any-css-class-you-want"}} 
+					{{#gridSet label="Meteor Gridforms Example <span class='pull-right'><a href='//github.com/herrhelms/meteor-gridforms'>Even html works in gridSet labels</a></span>"}}
+						{{#gridRow span="6"}}	
+							{{#gridElement type="text" placeholder="Start here" required="true" label="Text" id="adad" span="1"}}{{/gridElement}}
+							{{#gridElement type="number" placeholder="This field excepts only float or int values" label="Integer or Float" min="-3" max="3" span="3"}}{{/gridElement}}
+							{{#gridElement type="date" span="2" placeholder="Enter valid date" label="date (YYYY-MM-DD)" format="yyyy-mm-dd" }}{{/gridElement}}
+						{{/gridRow}}	
+						{{#gridRow span="3"}}	
+							{{#gridElement type="checkbox" span="1" label="checkbox" id="id_checkbox" value="Checkbox value" }}You can use checked="checked" with checkboxes{{/gridElement}}
+							{{#gridElement type="email" label="Email" placeholder="Enter valid Email" span="2" id="id_email" }}Some elements can be disabled (use disabled="disabled") They will be greyed out.{{/gridElement}}
+						{{/gridRow}}	
+						{{#gridRow span="1"}}	
+							{{#gridElement type="text" label="Disabled text field" placeholder="Placeholder for Textfield" value="This field has a value and is disabled" disabled="disabled" id="id_disabled_text"}}{{/gridElement}}
+						{{/gridRow}}	
+						{{#gridRow}}	
+							{{#gridElement label="Textarea" type="textarea" rows="5" placeholder="A lot of space for long texts. Little red stars next to the labels above show these fields are required." required="required" id="id_textarea"}}Here's an optional help text below the textarea element. Please remember, they are not neccessary at all.<br>Textareas often break layout so consider leaving them in one row for themselves.{{/gridElement}}
+						{{/gridRow}}	
+						{{#gridRow}}	
+							{{#gridElement type="submit" id="form_submit" value="Value sets the text on button" class="btn btn-md btn-success"}}Submitting here won't do anything, since this is just an example page. Classes for submit will attach to input directly instead of the parent wrapper element. {{/gridElement}}
+						{{/gridRow}}	
+					{{/gridSet}}
+				{{/gridForm}}
+```
