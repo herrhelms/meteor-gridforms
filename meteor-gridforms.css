@@ -21,7 +21,7 @@
 .grid-form [data-row-span]:after { clear: both; }
 .grid-form [data-row-span] [data-field-span] { padding: 8px; float: left; }
 .grid-form [data-row-span] [data-field-span] > label:first-child { margin-top: 0; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; color: #333333; display: block; margin-bottom: 4px; }
-.grid-form [data-row-span] [data-field-span] label.checkbox-label { font-size:18px; font-weight:normal }
+.grid-form [data-row-span] [data-field-span] label.radio-label, .grid-form [data-row-span] [data-field-span] label.checkbox-label { font-size:18px; font-weight:normal }
 .grid-form [data-row-span] [data-field-span] label:first-child:hover { cursor: text; }
 .grid-form [data-row-span] [data-field-span] > label span { color:#FE826D; }
 .grid-form [data-row-span] [data-field-span]:last-child { border-right: none; }

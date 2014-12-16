@@ -1,7 +1,20 @@
+<template name="_gridForm">
+  <form class="grid-form {{this}}">
+  	{{> UI.contentBlock}}
+	</form>
+</template>
+
 <template name="_gridRow">
 			<div data-row-span="{{this.span}}" class="{{this.classlist}}">
   	  	{{> UI.contentBlock}}
 	   </div>
+</template>
+
+<template name="_gridFormFieldset">
+	<fieldset class="grid-form-fieldset">
+  	<legend class="grid-form-header">{{this.labelhtml}}</legend>
+   	{{> UI.contentBlock}}
+	</fieldset>
 </template>
 
 <template name="_gridElement">
@@ -23,10 +36,19 @@
 <template name="_gridElementCheckbox">
 	<div data-field-span="{{this.span}}" class="{{this.classlist}}">
 		<label for="{{this.id}}">{{this.label}}{{#if this.required}}<span>*</span>{{/if}}</label>
- 		<div style="height:30px; line-height:30px;"><label class="checkbox-label"><input type="checkbox" class="" checked="{{this.checked}}" required="{{this.required}}" id="{{this.id}}" disabled="{{this.disabled}}"> {{this.value}}</label></div>
+ 		<div style="height:30px; line-height:30px;"><label class="checkbox-label"><input type="checkbox" checked="{{this.checked}}" required="{{this.required}}" id="{{this.id}}" disabled="{{this.disabled}}"> {{this.value}}</label></div>
 		<span class="grid-form-help" for="{{this.id}}">{{> UI.contentBlock}}</span>
   </div>
 </template>
+
+<template name="_gridElementRadio">
+	<div data-field-span="{{this.span}}" class="{{this.classlist}}">
+		<label for="{{this.id}}">{{this.label}}{{#if this.required}}<span>*</span>{{/if}}</label>
+ 		<div style="height:30px; line-height:30px;"><label class="radio-label"><input type="radio" name="{{this.name}}" checked="{{this.checked}}" required="{{this.required}}" id="{{this.id}}" disabled="{{this.disabled}}"> {{this.value}}</label></div>
+		<span class="grid-form-help" for="{{this.id}}">{{> UI.contentBlock}}</span>
+  </div>
+</template>
+
 
 <template name="_gridElementTextArea">
 	<div data-field-span="{{this.span}}" class="{{this.classlist}}">
@@ -35,7 +57,6 @@
 		<span class="grid-form-help" for="{{this.id}}">{{> UI.contentBlock}}</span>
   </div>
 </template>
-
 
 <template name="_gridElementNumber">
 	<div data-field-span="{{this.span}}" class="{{this.classlist}}">
@@ -59,17 +80,4 @@
  		<input type="submit" class="{{this.classlist}}" id="{{this.id}}" disabled="{{this.disabled}}" value="{{this.value}}">
 		<span class="grid-form-help" for="{{this.id}}">{{> UI.contentBlock}}</span>
   </div>
-</template>
-
-<template name="_gridForm">
-  <form class="grid-form {{this}}">
-  	{{> UI.contentBlock}}
-	</form>
-</template>
-
-<template name="_gridFormFieldset">
-	<fieldset class="grid-form-fieldset">
-  	<legend class="grid-form-header">{{this.labelhtml}}</legend>
-   	{{> UI.contentBlock}}
-	</fieldset>
 </template>

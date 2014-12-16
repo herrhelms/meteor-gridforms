@@ -38,7 +38,11 @@ UI.registerHelper('gridElement', function(){
 	  return Template._gridElementNumber;
   } else if(this.type == 'checkbox') {
 	  return Template._gridElementCheckbox;
+  } else if(this.type == 'radio') {
+	  if(!this.name) this.name = 'radio';
+	  return Template._gridElementRadio;
   } else if(this.type == 'submit') {
+	  if(!this.value) this.value = 'Submit';
 	  return Template._gridElementSubmit;
   }
 });
